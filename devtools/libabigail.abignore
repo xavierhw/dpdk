@@ -48,3 +48,9 @@
         changed_enumerators = RTE_CRYPTO_AEAD_LIST_END
 [suppress_variable]
         name = rte_crypto_aead_algorithm_strings
+; These functions were moved from stable to internal.
+; Avoid loading the symbols and comparing them.
+; This is a temporary exception till DPDK 20.11
+[suppress_file]
+	file_name_regexp = ^librte_common_mlx5\.
+
